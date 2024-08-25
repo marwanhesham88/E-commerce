@@ -27,7 +27,7 @@ let formik = useFormik({
     city: "",
   },
   validationSchema,
-  onSubmit : () => handleCheckout(cartId ,`https://marwanhesham88.github.io/E-commerce`)
+  onSubmit : () => handleCheckout(cartId ,`http://localhost:5173`)
 })
 
 async function handleCheckout(cartId, url){

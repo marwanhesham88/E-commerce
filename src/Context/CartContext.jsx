@@ -29,7 +29,7 @@ function getLoggedUserCart() {
    return axios.get(`https://ecommerce.routemisr.com/api/v1/cart`,{headers})
     .then( (res) => {
 
-        // console.log(res.data.data.cartOwner);
+        console.log(res.data.data.cartOwner);
 
         // console.log(res.data.numOfCartItems);
         setNumberItems(res.data.numOfCartItems)
