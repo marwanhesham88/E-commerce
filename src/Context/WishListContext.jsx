@@ -1,5 +1,6 @@
 import axios from "axios";
-import { createContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
+import { UserContext } from "./UserContext";
 
 
 
@@ -9,6 +10,8 @@ export default function WishListContextProvider(props){
     const [cartId, setCartId] = useState(0)
     const [numberItems, setNumberItems] = useState(0)
     const [wishList, setWishList] = useState([])
+    const {userLogin} = useContext(UserContext)
+
 
 let headers = {
     token: localStorage.getItem("userToken")
@@ -38,7 +41,10 @@ function addProductToWishList(productId) {
 
 
 
- 
+ useEffect(()=>{
+    userLogin && getLoggedUserWishList()
+  },[userLogin])
+
 
  
 

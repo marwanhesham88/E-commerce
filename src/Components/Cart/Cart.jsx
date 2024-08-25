@@ -4,11 +4,14 @@ import { CartContext } from '../../Context/CartContext'
 import toast from 'react-hot-toast'
 import { Link, useNavigate } from 'react-router-dom'
 import {Helmet} from "react-helmet";
+import { UserContext } from '../../Context/UserContext'
 
 export default function Cart() {
   let {getLoggedUserCart , updateCartProductQuantity , deleteCartItem , clearUserCart , setNumberItems , numberItems} = useContext(CartContext)
   const [cartDetails, setCartDetails] = useState(null)
   const navigate = useNavigate()
+   const {userLogin} = useContext(UserContext)
+   
 
   async function getCartItems() {
     
@@ -69,8 +72,8 @@ export default function Cart() {
   }
 
   useEffect(()=>{
-    getCartItems()
-  },[])
+    userLogin && getCartItems()
+  },[userLogin])
 
   return <>
   <Helmet>

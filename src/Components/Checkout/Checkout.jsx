@@ -33,7 +33,7 @@ let formik = useFormik({
 async function handleCheckout(cartId, url){
   setisLoading(true)
     let {data} =  await checkout(cartId , url , formik.values)
-    console.log(data.session.url);
+    console.log(data);
     window.location.href = data.session.url
     setisLoading(false)
     
