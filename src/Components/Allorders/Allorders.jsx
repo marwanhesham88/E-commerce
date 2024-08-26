@@ -3,13 +3,18 @@ import style from './Allorders.module.css'
 import axios from 'axios'
 import { CartContext } from '../../Context/CartContext'
 import { UserContext } from '../../Context/UserContext'
+import { jwtDecode } from "jwt-decode";
+
 
 export default function Allorders() {
   let {  userId , getLoggedUserCart} =  useContext(CartContext)
   const [orders, setOrders] = useState([])
+  const {id} = jwtDecode(localStorage.getItem("userToken"));
 
-  const {id} = useContext(UserContext)
-  console.log("Auth", id);
+  console.log( "Auth",id);
+
+  // const {id} = useContext(UserContext)
+  // console.log("Auth", id);
   
 function getMyOrders() {
 
@@ -44,8 +49,8 @@ function getMyOrders() {
        <h3 className='text-emerald-600'>{cartItem.product.category.name}</h3>
        <h3 className='font-semibold mb-1'>{cartItem.product.title.split(" ").slice(0,2).join(" ")}</h3>
        <div className='flex justify-between p-3'>
-         <span>{cartItem.price} EGP</span>
-         <span>{cartItem.count} </span>
+         <span className='flex justify-center items-center'>{cartItem.price} EGP</span>
+         <span className='bg-emerald-600 p-4'>{cartItem.count} </span>
        </div>
        
        </div>)} 

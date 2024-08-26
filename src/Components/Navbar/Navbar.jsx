@@ -50,6 +50,7 @@ export default function Navbar() {
           <li><NavLink className="text-gray-600" to="products">Products</NavLink></li>
           <li><NavLink className="text-gray-600" to="categories">Categories</NavLink></li>
           <li><NavLink className="text-gray-600" to="brands">Brands</NavLink></li>
+          <li><NavLink className="text-gray-600" to="allorders">All orders</NavLink></li>
         </ul>
         </> : null}
             <div className="links flex flex-col lg:flex-row list-none lg:ml-auto gap-4">
