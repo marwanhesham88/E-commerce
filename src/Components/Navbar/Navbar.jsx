@@ -45,7 +45,7 @@ export default function Navbar() {
         {userLogin != null ? <>
           <ul className='flex flex-col lg:flex-row list-none lg:ml-auto gap-4'>
           <li><NavLink className="text-gray-600" to="">Home</NavLink></li>
-          <li><NavLink className='relative text-gray-600' to="cart">Cart <div className='absolute top-[-16px] right-[-14px] p-1 size-5 bg-emerald-600 text-white rounded-full flex justify-center items-center'>{numberItems}</div></NavLink></li>
+          <li><NavLink className='relative text-gray-600' to="cart"><i className="fa-solid fa-cart-shopping"></i> <div className='absolute top-[-16px] right-[-14px] p-1 size-5 bg-emerald-600 text-white rounded-full flex justify-center items-center'>{numberItems}</div></NavLink></li>
           <li><NavLink className="text-gray-600" to="wishList">wish list</NavLink></li>
           <li><NavLink className="text-gray-600" to="products">Products</NavLink></li>
           <li><NavLink className="text-gray-600" to="categories">Categories</NavLink></li>
