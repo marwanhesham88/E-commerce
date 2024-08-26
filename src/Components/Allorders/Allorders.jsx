@@ -4,6 +4,7 @@ import axios from 'axios'
 import { CartContext } from '../../Context/CartContext'
 import { UserContext } from '../../Context/UserContext'
 import { jwtDecode } from "jwt-decode";
+import { Helmet } from 'react-helmet'
 
 
 export default function Allorders() {
@@ -39,6 +40,11 @@ function getMyOrders() {
   }, [id])
   
   return <>
+  <Helmet>
+                <meta charSet="utf-8" />
+                <title>all-orders</title>  
+                <meta name="keywords" content="all-orders" />         
+  </Helmet>
   <h2 className='text-emerald-600 text-4xl font-normal text-center mt-8 mb-4'>Allorders</h2>
   <div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4'>
   
