@@ -18,6 +18,7 @@ export default function Checkout() {
     city: Yup.string().required("city is required")
   })
 
+  // console.log( "href",window.location);
 
 
 let formik = useFormik({
@@ -27,13 +28,13 @@ let formik = useFormik({
     city: "",
   },
   validationSchema,
-  onSubmit : () => handleCheckout(cartId ,`https://marwanhesham88.github.io`)
+  onSubmit : () => handleCheckout(cartId ,`${window.location.origin}`)
 })
 
 async function handleCheckout(cartId, url){
   setisLoading(true)
     let {data} =  await checkout(cartId , url , formik.values)
-    console.log(data);
+    console.log(data);    
     window.location.href = data.session.url
     setisLoading(false)
     
