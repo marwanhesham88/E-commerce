@@ -55,7 +55,7 @@ function getMyOrders() {
        <h3 className='text-emerald-600'>{cartItem.product.category.name}</h3>
        <h3 className='font-semibold mb-1'>{cartItem.product.title.split(" ").slice(0,2).join(" ")}</h3>
        <div className='flex justify-between p-3'>
-         <span className='flex justify-center items-center'>{cartItem.price} EGP</span>
+         <span className='flex justify-center items-center'>{cartItem.count * cartItem.price} EGP</span>
          <span className='bg-emerald-600 p-4'>{cartItem.count} </span>
        </div>
        
